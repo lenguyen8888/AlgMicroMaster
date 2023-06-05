@@ -1,9 +1,14 @@
-# python3
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# @Time    : 2019/3/2 11:00 AM
+# @Author  : Nguyen Le
 
+#P# write a program that takes 2 single digit numbers from input() and
+#P# print out the sum of the 2 numbers
 
-def sum_of_two_digits(first_digit, second_digit):
-    return first_digit + second_digit
-
+#P# input: 2 single digit numbers
+#P# output: sum of the 2 numbers
+#P# run if this is the main program
 if __name__ == '__main__':
     a, b = map(int, input().split())
-    print(sum_of_two_digits(a, b))
+    print(a + b)
