@@ -15,6 +15,25 @@ def get_fibonacci_huge_naive(n, m):
 
     return current % m
 
+#P# implement a faster fibonacci  % m before current assignment
+def get_fibonacci_fast(n, m):
+    #P# if n <= 1, return n
+    if n <= 1:
+        return n
+    #P# initialize the previous fibonacci number to 0
+    prev = 0
+    #"""  """ initialize the current fibonacci number to 1
+    current = 1
+    #P# loop from 2 to n
+    for i in range(2, n + 1):
+        # save the previous fibonacci number and update current fibonacci number
+        # by adding the previous fibonacci number and take % m to reduce
+        # the number of digits
+        prev, current = current, (prev + current) % m
+    # return the current fibonacci number
+    return current
+
+
 #P# find the Pisano period of m
 def pisano_period(m):
     # initialize the pisano period to 0
@@ -23,8 +42,8 @@ def pisano_period(m):
     prev = 0
     #"""  """ initialize the current fibonacci number to 1
     current = 1
-    #P# loop from 2 to m * m
-    for i in range(2, m * m):
+    #P# loop from 2 to m * m + 3
+    for i in range(2, m * m + 4):
         # save the previous fibonacci number and update current fibonacci number
         # by adding the previous fibonacci number and take % m to reduce
         # the number of digits
@@ -41,10 +60,14 @@ def pisano_period(m):
 
 #P# implement a faster fibonacci  % m using Pisano period
 def get_fibonacci_huge(n, m):
-    # find Pisano period of m mPisano
+    #P# if m <= 2 return get_fibonacci_fast(n, m)
+    if m <= 2:
+        return get_fibonacci_fast(n, m)
+    
+    #P# find Pisano period of m mPisano
     mPisano = pisano_period(m)
     # return the get_fibonacci_huge_naive(n % mPisano, m)
-    return get_fibonacci_huge_naive(n % mPisano, m)
+    return get_fibonacci_fast(n % mPisano, m)
 
 if __name__ == '__main__':
     input = sys.stdin.read();
