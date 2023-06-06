@@ -20,7 +20,7 @@ def gcd(a, b):
 
 #P# implement a faster lcm algorithm
 def lcm(a, b):
-    #P# return a * b / gcd(a, b)
+    # return a * b / gcd(a, b)
     return a * b // gcd(a, b)
 
 if __name__ == '__main__':

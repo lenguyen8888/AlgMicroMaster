@@ -14,10 +14,10 @@ def gcd_naive(a, b):
 
 #P# implement a faster gcd algorithm
 def gcd(a, b):
-    #P# if b == 0, return a
+    # if b == 0, return a
     if b == 0:
         return a
-    #P# else, return gcd(b, a % b)
+    # else, return gcd(b, a % b)
     return gcd(b, a % b)
 
 

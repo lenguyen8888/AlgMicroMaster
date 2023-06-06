@@ -42,8 +42,8 @@ def pisano_period(m):
     prev = 0
     #"""  """ initialize the current fibonacci number to 1
     current = 1
-    #P# loop from 2 to m * m + 3
-    for i in range(2, m * m + 4):
+    #P# loop from 2 to 7 * m
+    for i in range(2, 7 * m + 1):
         # save the previous fibonacci number and update current fibonacci number
         # by adding the previous fibonacci number and take % m to reduce
         # the number of digits
