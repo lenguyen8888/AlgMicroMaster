@@ -60,10 +60,7 @@ def pisano_period(m):
 
 #P# implement a faster fibonacci  % m using Pisano period
 def get_fibonacci_huge(n, m):
-    #P# if m <= 2 return get_fibonacci_fast(n, m)
-    if m <= 2:
-        return get_fibonacci_fast(n, m)
-    
+
     #P# find Pisano period of m mPisano
     mPisano = pisano_period(m)
     # return the get_fibonacci_huge_naive(n % mPisano, m)
